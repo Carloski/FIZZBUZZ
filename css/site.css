@@ -77,6 +77,29 @@ footer {
   color: #0168ba;
 }
 
+.giticon {
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+
+.gitText {
+  color: var(--dark-color);
+  font-size: 20px;
+}
+
+.Fizz {
+  color: darkgoldenrod;
+}
+
+.Buzz {
+  color: darkgreen;
+}
+
+.FizzBuzz {
+  color: darkblue;
+  font-weight: bold;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   white-space: pre-wrap;

@@ -48,7 +48,41 @@
 
  <!-- ====== MAIN SECTION ====== -->
 <main class="flex-shrink-0">
-<div class="container">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 col border-2 border-end">
+            <h1><span class="fw-bold">FIZZBUZZ:</span> A coding project</h1> 
+            <h4 class="lead">
+                Live life one loop at a time. A javaScript coding exercise using loops. Write a 
+                program that displays the numbers from 0 to 100. Display the even numbers 
+                in <strong>BOLD</strong>
+            </h4>
+            <h2 class="mt-5 border-2 border-bottom">Instructions:</h2>
+            <p>Enter a starting and ending value. Press the buttom and the values will appear</p>
+        </div>
+        <div class="col-lg-8 col gx-5">
+            <h5>Enter values:</h5>
+            <div>
+                <form class="row gy-3 gx-2">
+                   <div class="col">
+                       <input type="number" id="fizzValue" value="3" placeholder="3" aria-label="3" class="form-control">
+                   </div>
+                   <div class="col">
+                    <input type="number" id="buzzValue" value="5" placeholder="5" aria-label="4" class="form-control">
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button type="button" id="btn-submit" class="btn btn-warning btn-lg">Buzz It!</button>
+                </div>
+                </form>
+                <h2 class="mt-5 border-bottom border-2">Results</h2>
+                <table class="table table-striped table-sm">
+                    <tbody id="results">
+                        <!-- RESULTS FROM JAVASCRIPT GO HERE -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 </div>
 </main><!-- ====== MAIN END ====== -->
@@ -78,11 +112,25 @@
 
 
 </footer> <!-- ====== FOOTER END ====== -->
+
+<template id="fbTemplate">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
 </script>
 <script src="js/site.js"></script>
+<script>
+    document.getElementById('btn-submit').addEventListener('click', getValues);
+</script>
 </body>
 
 </html>
