@@ -22,7 +22,7 @@
     <!-- ====== NAV SECTION ====== -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <a class="navbar-brand" href="#">Fizz Buzz</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="app.html">TheApp</a>
+                    <a class="nav-link" href="app.html">The App</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
@@ -49,22 +49,103 @@
  <!-- ====== MAIN SECTION ====== -->
  <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for [APP NAME.]</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Fizz Buzz</h2>
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-javascript">
-                        //Testing Prism
-                        function helloWorld(){
-                            alert('Hello World!');
+                        function getValues() {
+                            // Obtain Values from user input
+                            let fizzVal = document.getElementById("fizzValue").value;
+                            let buzzVal = document.getElementById("buzzValue").value;
+                        
+                            // parse values
+                            fizzVal = parseInt(fizzVal);
+                            buzzVal = parseInt(buzzVal);
+                        
+                            // check that the values are integers
+                            if(Number.isInteger(fizzVal) && Number.isInteger(buzzVal)) {
+                                let numbers = fizzBuzz(fizzVal, buzzVal);
+                                displayData(numbers);
+                            } else {
+                                alert("Please enter a number");
+                            }
+                        }
+                                              
+                        function fizzBuzz(fizzVal, buzzVal) {
+                            let returnArray = [];
+                        
+                            for (let index = 1; index <= 100; index++) {
+                                if (index % fizzVal == 0 && index % buzzVal == 0) {
+                                    returnArray.push("FizzBuzz");
+                                } else if (index % fizzVal == 0){
+                                    returnArray.push("Fizz");
+                                } else if (index % buzzVal == 0) {
+                                    returnArray.push("Buzz");
+                                } else {
+                                    returnArray.push(index);
+                                }
+                            }
+                            return returnArray;
+                        }
+                        
+                        function displayData(numbers) {
+                            let tableBody = document.getElementById("results");
+                            let templateRow = document.getElementById("fbTemplate");
+                        
+                            // clear the table
+                            tableBody.innerHTML = "";
+                        
+                            for (let i = 0; i < numbers.length; i += 5) {
+                                let tableRow = document.importNode(templateRow.content, true);
+                        
+                                let rowCols = tableRow.querySelectorAll("td");
+                        
+                                rowCols[0].classList.add(numbers[i]);
+                                rowCols[0].textContent = numbers[i];
+                        
+                                rowCols[1].classList.add(numbers[i + 1]);
+                                rowCols[1].textContent = numbers[i + 1];
+                        
+                                rowCols[2].classList.add(numbers[i + 2]);
+                                rowCols[2].textContent = numbers[i + 2];
+                        
+                                rowCols[3].classList.add(numbers[i + 3]);
+                                rowCols[3].textContent = numbers[i + 3];
+                        
+                                rowCols[4].classList.add(numbers[i + 4]);
+                                rowCols[4].textContent = numbers[i + 4];
+                        
+                                tableBody.appendChild(tableRow);
+                                
+                            }
                         }
                     </code>
                 </pre>
             </div>
+            
             <div class="col-lg-4">
-                <h5 class="mt-2">Hello World</h5>
-                <p>The code is structured in one function</p>
-                <p>Hello World is a function that displays a message in the Page.</p>
+                <h5 class="mt-2">Fizz Buzz</h5>
+                <p>The code is structured in three function</p>
+                <p>
+                    <strong>getValues</strong> is a function that captures the value of the users selections. 
+                    It then changes those values from a string to an integer. 
+                    It uses an if statement to validate the the input has been converted 
+                    before using it in our logic function.
+                </p>
+                <p>
+                    The <strong>fizzBuzz</strong> function serves as our programms logic. 
+                    it uses a for loop to iterate through the array of numbers 
+                    (From the 0 to 100) It then uses a nested <em>if</em> statement 
+                    to verify which numbers are dividible by 3, 5 or both. Then the function stores
+                    all the numbers in a new array.
+                </p>
+                <p>
+                    <strong>displayData</strong> is the function that displays a message in the Page. 
+                    It uses another for loop and if statement to identify even numbers and apply styling. 
+                    It uses innerHTML to display the results to the DOM.
+                </p>
+
                 <div class="col">
                     <a href="https://github.com/Carloski/FIZZBUZZ" target="_blank">
                         <i class="fab fa-github fa-2x giticon"><span class="gitText"> Git Repo</span></i>

@@ -17,7 +17,6 @@ function getValues() {
     }
 }
 
-
 function fizzBuzz(fizzVal, buzzVal) {
     let returnArray = [];
 
@@ -34,8 +33,6 @@ function fizzBuzz(fizzVal, buzzVal) {
     }
     return returnArray;
 }
-
-
 
 function displayData(numbers) {
     let tableBody = document.getElementById("results");
@@ -67,5 +64,4 @@ function displayData(numbers) {
         tableBody.appendChild(tableRow);
         
     }
-
 }

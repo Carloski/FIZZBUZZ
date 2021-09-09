@@ -106,3 +106,25 @@ pre[class*="language-"] {
   word-break: break-all;
   word-wrap: break-word;
 }
+
+.img {
+  width: 550px;
+  height: 400px;
+}
+
+@media screen and (max-width: 415px) {
+  .img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .navbar {
+    padding-right: 15px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .footer {
+    padding-right: 50px !important;
+  }
+}
