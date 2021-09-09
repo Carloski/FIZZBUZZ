@@ -20,19 +20,29 @@ function getValues() {
 function fizzBuzz(fizzVal, buzzVal) {
     let returnArray = [];
 
-    for (let index = 1; index <= 100; index++) {
-        if (index % fizzVal == 0 && index % buzzVal == 0) {
-            returnArray.push("FizzBuzz");
-        } else if (index % fizzVal == 0){
-            returnArray.push("Fizz");
-        } else if (index % buzzVal == 0) {
-            returnArray.push("Buzz");
-        } else {
-            returnArray.push(index);
-        }
+    for (let i = 1; i <= 100; i++) {
+        let Value = ((i % fizzVal == 0 ? "Fizz" : '') + (i % buzzVal == 0 ? "Buzz" : '') || i );
+        returnArray.push(Value);
     }
     return returnArray;
 }
+
+// function fizzBuzzB(fizzVal, buzzVal) {
+//     let returnArray = [];
+
+//     for (let index = 1; index <= 100; index++) {
+//         if (index % fizzVal == 0 && index % buzzVal == 0) {
+//             returnArray.push("FizzBuzz");
+//         } else if (index % fizzVal == 0){
+//             returnArray.push("Fizz");
+//         } else if (index % buzzVal == 0) {
+//             returnArray.push("Buzz");
+//         } else {
+//             returnArray.push(index);
+//         }
+//     }
+//     return returnArray;
+// }
 
 function displayData(numbers) {
     let tableBody = document.getElementById("results");
