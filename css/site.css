@@ -1,11 +1,10 @@
 :root {
   --primary-color: #023047;
-  --secondary-color: #fb8500;
-  --dark-color: #292929;
+  --secondary-color: #c43c1e;
+  --dark-color: #303030;
   --light-color: #dff3e4;
-  --text-color: #219ebc;
-  --yellow-color: #ffb703;
-  --lightBlue-color: #219ebc;
+  --fizz-color: darkgoldenrod;
+  --buzz-color: darkgreen;
 }
 
 body {
@@ -23,7 +22,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+.accent {
+  color: var(--secondary-color);
 }
 
 
@@ -57,11 +60,11 @@ footer {
 }
 
 .checklist > li i {
-  color: var(--yellow-color);
+  color: var(--dark-color);
 }
 
 .checklist > li i:hover {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .fab:hover {
@@ -96,15 +99,17 @@ footer {
 }
 
 .Fizz {
-  color: darkgoldenrod;
+  color: var(--fizz-color);
+  font-weight: bold;
 }
 
 .Buzz {
-  color: darkgreen;
+  color: var(--buzz-color);
+  font-weight: bold;
 }
 
 .FizzBuzz {
-  color: darkblue;
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
@@ -115,24 +120,6 @@ pre[class*="language-"] {
   word-wrap: break-word;
 }
 
-.img {
-  width: 500px;
-  height: 550px;
-}
-
-@media screen and (max-width: 415px) {
-  .img {
-    width: 300px !important;
-    height: 300px !important;
-  }
-
-  .navbar {
-    padding-right: 15px;
-  }
-}
-
-@media screen and (min-width: 801px) {
-  .footer {
-    padding-right: 50px !important;
-  }
+img {
+  width: 100%;
 }
